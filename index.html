@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); /* New Font */
+        
+        body {
+            text-align: center;
+            font-family: 'Pacifico', cursive; /* Cute romantic font */
+            background-image: url('https://cdn.pixabay.com/photo/2018/02/21/15/06/heart-3166413_1280.jpg'); /* Floral pink background */
+            background-size: cover;
+            color: #ff69b4; /* Pink text */
+        }
+        .container {
+            margin-top: 100px;
+            background: rgba(255, 182, 193, 0.8); /* Soft pink */
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0px 0px 20px rgba(255, 105, 180, 0.7);
+        }
+        button {
+            font-size: 20px;
+            padding: 12px 25px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff1493; /* Deep pink */
+            color: white;
+            box-shadow: 0px 4px 10px rgba(255, 20, 147, 0.6);
+        }
+        .yes:hover {
+            background-color: #ff69b4;
+        }
+        .no {
+            background-color: #d3d3d3;
+            color: white;
+            position: absolute;
+        }
+        #message {
+            display: none;
+            background: rgba(255, 105, 180, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 50px;
+            color: white;
+            box-shadow: 0px 0px 20px rgba(255, 20, 147, 0.7);
+        }
+        img {
+            width: 200px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Will you be my Valentine? 💖</h1>
+        <button class="yes" onclick="showLove()">Yes</button>
+        <button class="no" id="noBtn" onclick="moveButton()">No</button>
+    </div>
+
+    <div id="message">
+        <h2>I knew you'd say YES 💕</h2>
+        <p>You are my special Valentine! 🌸</p>
+        <img src="https://imgur.com/a/j22IufN" alt="Happy Valentine GIF">
+    </div>
+
+    <script>
+        function showLove() {
+            document.querySelector(".container").style.display = "none";
+            document.getElementById("message").style.display = "block";
+        }
+
+        function moveButton() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            let noBtn = document.getElementById("noBtn");
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        }
+
+        // Make the No button move infinitely when clicked
+        document.getElementById("noBtn").addEventListener("click", function() {
+            moveButton(); // Make the button move
+            setInterval(moveButton, 100); // Keep it moving every 100ms after click
+        });
+    </script>
+
+</body>
+</html>
