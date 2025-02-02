@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will You Be My Valentine?</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
         body {
             text-align: center;
-            font-family: 'Dancing Script', cursive; 
+            font-family: 'Playfair Display', serif;
             background-image: url('https://cdn.pixabay.com/photo/2018/02/21/15/06/heart-3166413_1280.jpg');
             background-size: cover;
             color: #ff69b4;
@@ -70,7 +71,7 @@
 
     <div id="message">
         <h2>I knew you'd say YES 💕</h2>
-        <p>You are my special Valentine! Every moment with you makes my world brighter. I love you always. Happy Valentine's Day! 🌸</p>
+        <p>You are my special Valentine! I love you always. Happy Valentine's Day! 🌸</p>
         <img src="https://raw.githubusercontent.com/DzarelDeveloper/Img/main/gifyou.webp" alt="Happy Valentine GIF">
     </div>
 
@@ -81,14 +82,12 @@
         }
 
         function moveButton() {
-            let x = Math.random() * (window.innerWidth - 100);
+            let x = Math.random() * (window.innerWidth - 50);
             let y = Math.random() * (window.innerHeight - 50);
             let noBtn = document.getElementById("noBtn");
             noBtn.style.left = x + "px";
             noBtn.style.top = y + "px";
         }
-
-        
         document.getElementById("noBtn").addEventListener("click", function() {
             moveButton();
             setInterval(moveButton, 100);
